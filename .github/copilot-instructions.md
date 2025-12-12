@@ -54,11 +54,13 @@ This is a simple, clean, and modern HTML/CSS landing page repository. The design
 
 ## Figma Integration
 - Use Figma MCP tools to extract design context directly
+- **ALWAYS include `dirForAssetWrites` parameter** when calling Figma tools: `/Users/aaa/Work/landing/images`
 - Export all assets to `/images` directory
 - Store temporary Figma output (React/Tailwind code) in `/tmp` directory
 - Convert Figma-generated React+Tailwind code to vanilla HTML/CSS
 - Extract fonts from Figma design (check font-family in generated code)
 - Implement animations and interactions from Figma prototype
+- Example: `dirForAssetWrites: "/Users/aaa/Work/landing/images"`
 
 ## When Helping with Code
 - Prioritize simplicity and readability
