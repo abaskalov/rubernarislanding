@@ -119,12 +119,10 @@ body {
 }
 
 .header__logo {
-    font-family: var(--font-primary);
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.3;
+    font-family: var(--font-logo);
+    font-size: var(--fs-logo);
+    line-height: 1.2;
     flex: 1;
-    text-transform: lowercase;
 }
 
 .header__logo p {
@@ -133,12 +131,19 @@ body {
 
 .header__brand {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.25rem;
 }
 
 .header__brand-icon {
     height: 3.5rem;
+    width: auto;
+}
+
+.header__brand-text {
+    height: 1.125rem;
     width: auto;
 }
 
@@ -168,6 +173,13 @@ body {
     height: 0.25rem;
     background: var(--color-black);
     border-radius: 0.125rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.nav-link:hover .nav-link__underline {
+    opacity: 1;
+    width: 100%;
 }
 
 /* Hero Section */
