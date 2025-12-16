@@ -228,14 +228,107 @@ body {
     align-items: center;
 }
 
-.cross-platform__image {
+.cross-platform__slideshow {
     flex-shrink: 0;
     width: 31.25rem;
+    height: 20rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.cross-platform__image img {
-    width: 100%;
-    height: auto;
+.cross-platform__slide {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0;
+}
+
+/* Slide 1: Laptop - slides out to left, fades in */
+.cross-platform__slide--1 {
+    animation: slideshow-laptop 6.9s infinite;
+}
+
+/* Slide 2: Phone - slides in from right, fades out */
+.cross-platform__slide--2 {
+    animation: slideshow-phone 6.9s infinite;
+}
+
+/* Slide 3: Tablet - fade in/out */
+.cross-platform__slide--3 {
+    animation: slideshow-fade 6.9s infinite;
+    animation-delay: 4.6s;
+}
+
+@keyframes slideshow-laptop {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    28.99% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    33.33% {
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+    33.34% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideshow-phone {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    28.99% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    33.33% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    62.32% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    66.67% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideshow-fade {
+    0% {
+        opacity: 0;
+    }
+    4.35% {
+        opacity: 1;
+    }
+    28.99% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .cross-platform__text {
