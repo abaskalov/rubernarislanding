@@ -193,8 +193,9 @@ body {
 }
 
 .hero__cloud-animated {
-    width: 27.5rem;
-    height: 24.5rem;
+    width: 37.5rem; /* 600px */
+    height: auto;
+    aspect-ratio: 680 / 580;
     margin: 0 auto;
     display: block;
 }
