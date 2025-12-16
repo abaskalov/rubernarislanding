@@ -193,28 +193,10 @@ body {
 }
 
 .hero__cloud-animated {
-    width: 33rem;
-    height: 31.25rem;
+    width: 27.5rem;
+    height: 24.5rem;
     margin: 0 auto;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: cloudMorph 12s ease-in-out infinite;
-}
-
-@keyframes cloudMorph {
-    0%, 100% {
-        background-image: url('../images/5c1937153c5570e63f15e4b9ab3f042dd7a91091.svg');
-        transform: scale(1) rotate(0deg);
-    }
-    33% {
-        background-image: url('../images/ea486b6d3b64a268efb367fdaa9b3fb9cab16126.svg');
-        transform: scale(0.87) rotate(0deg);
-    }
-    66% {
-        background-image: url('../images/18b071c72187b628fe5b04fb9784184975f531b0.svg');
-        transform: scale(1.27) rotate(180deg);
-    }
+    display: block;
 }
 
 /* Cross-Platform Section */

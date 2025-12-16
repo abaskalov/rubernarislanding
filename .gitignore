@@ -37,6 +37,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Temporary files from Figma exports
+tmp/
+
 # Optional: if you use any build tools later
 node_modules/
 dist/
