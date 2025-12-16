@@ -24,6 +24,12 @@
                             <img src="images/logo-icon.svg" alt="" class="header__brand-icon">
                             <img src="images/logo-text.svg" alt="Ruber Naris" class="header__brand-text">
                         </a>
+                        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                        <label for="nav-toggle" class="nav-toggle-label">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
                         <nav class="header__nav">
                             <a href="#tech-stack" class="nav-link">
                                 <span>СТЕК</span>
@@ -340,5 +346,29 @@
             </div>
         </section>
     </main>
+
+    <!-- Mobile floating navigation -->
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
+    <div class="mobile-nav-overlay"></div>
+    <label for="mobile-nav-toggle" class="mobile-nav-button" aria-label="Навигация">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav__link">НАВЕРХ</a>
+        <a href="#tech-stack" class="mobile-nav__link">СТЕК</a>
+        <a href="#portfolio" class="mobile-nav__link">СДЕЛАНО</a>
+        <a href="#contact" class="mobile-nav__link">КОНТАКТЫ</a>
+    </nav>
+
+    <script>
+        // Close mobile nav when clicking on links or overlay
+        document.querySelectorAll('.mobile-nav__link, .mobile-nav-overlay').forEach(el => {
+            el.addEventListener('click', () => {
+                document.getElementById('mobile-nav-toggle').checked = false;
+            });
+        });
+    </script>
 </body>
 </html>

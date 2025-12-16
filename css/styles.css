@@ -12,6 +12,11 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 img {
@@ -663,7 +668,20 @@ body {
     .cross-platform__image,
     .tech-stack__icon {
         width: 100%;
-        max-width: 25rem;
+        max-width: 20rem;
+    }
+
+    .cross-platform__slideshow {
+        width: 100%;
+        max-width: 20rem;
+        height: 15rem;
+    }
+
+    .database__slideshow {
+        width: 100%;
+        max-width: 20rem;
+        height: auto;
+        aspect-ratio: 1;
     }
 
     .portfolio__grid {
@@ -704,5 +722,148 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+}
+
+/* Mobile Floating Navigation */
+.mobile-nav-toggle {
+    display: none;
+}
+
+.mobile-nav-button {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav-overlay {
+    display: none;
+}
+
+/* Hide header nav toggle on desktop */
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Show header nav on mobile */
+    .header__nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle,
+    .nav-toggle-label {
+        display: none;
+    }
+
+    /* Mobile overlay for closing menu */
+    .mobile-nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-nav-toggle:checked ~ .mobile-nav-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Mobile floating nav button */
+    .mobile-nav-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.35rem;
+        position: fixed;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 3rem;
+        height: 3rem;
+        background: var(--color-black);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .mobile-nav-button:hover {
+        transform: scale(1.05);
+    }
+
+    .mobile-nav-button span {
+        display: block;
+        width: 1.25rem;
+        height: 2px;
+        background: white;
+        border-radius: 1px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Animate burger to X when open */
+    .mobile-nav-toggle:checked + .mobile-nav-button span:nth-child(1) {
+        transform: translateY(0.45rem) rotate(45deg);
+    }
+
+    .mobile-nav-toggle:checked + .mobile-nav-button span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-toggle:checked + .mobile-nav-button span:nth-child(3) {
+        transform: translateY(-0.45rem) rotate(-45deg);
+    }
+
+    /* Mobile nav panel */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        position: fixed;
+        bottom: 5rem;
+        right: 1.25rem;
+        background: var(--color-black);
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(1rem) scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-nav-toggle:checked ~ .mobile-nav {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .mobile-nav__link {
+        font-family: var(--font-heading);
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: background 0.3s ease;
+    }
+
+    .mobile-nav__link:hover {
+        background: rgba(255, 255, 255, 0.1);
     }
 }
