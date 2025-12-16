@@ -107,7 +107,12 @@ body {
 
 /* Header */
 .header {
-    background: var(--color-red);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
 }
 
 .header__content {
@@ -184,20 +189,31 @@ body {
 
 /* Hero Section */
 .hero {
+    position: relative;
     background: var(--color-red);
-    min-height: 52rem;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-xl) 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero__cloud-animated {
     width: 37.5rem; /* 600px */
     height: auto;
     aspect-ratio: 680 / 580;
-    margin: 0 auto;
-    display: block;
 }
 
 /* Cross-Platform Section */
