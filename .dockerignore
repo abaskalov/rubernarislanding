@@ -1,0 +1,8 @@
+.github/
+.trunk/
+.gitignore
+.dockerignore
+Containerfile
+Makefile
+README.md
+kubernetes
