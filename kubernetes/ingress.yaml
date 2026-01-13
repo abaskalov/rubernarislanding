@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rubernaris-frontend
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: rubernaris.team
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: rubernaris-frontend
+            port:
+              number: 8080
